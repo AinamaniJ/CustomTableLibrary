@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Custom Table Library</title>
+    <link rel="stylesheet" href="./custom_table/table_styles.css" />
+  </head>
+  <body>
+    <div class="table-container">
+      <div class="table-header">
+        <h1 class="table-title">Orders</h1>
+        <div class="search-container">
+          <input
+            type="text"
+            id="searchInput"
+            class="search-input"
+            placeholder="Search..."
+          />
+          <select id="rowsPerPage" class="select-input">
+            <option value="5">5 rows</option>
+            <option value="10">10 rows</option>
+            <option value="20">20 rows</option>
+          </select>
+        </div>
+        <div class="table-actions">
+          <button class="btn btn-primary" id="exportPDF">Export PDF</button>
+          <button class="btn btn-secondary" id="exportCSV">Export CSV</button>
+        </div>
+      </div>
+
+      <table class="custom-table" id="dataTable">
+        <thead>
+          <tr>
+            <th data-sort="id">#</th>
+            <th data-sort="customer">Customer</th>
+            <th data-sort="product">Product</th>
+            <th data-sort="price">Price</th>
+            <th data-sort="status">Status</th>
+            <th data-sort="date">Date</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="tableBody"></tbody>
+      </table>
+
+      <div class="table-footer">
+        <div class="table-info">
+          Showing <span id="startIndex">1</span> to
+          <span id="endIndex">5</span> of
+          <span id="totalEntries">0</span> entries
+        </div>
+        <div class="pagination" id="pagination"></div>
+      </div>
+    </div>
+
+    <template id="statusBadgeTemplate">
+      <span class="status-badge"></span>
+    </template>
+
+    <template id="actionButtonsTemplate">
+      <div class="action-buttons">
+        <button class="btn btn-icon btn-edit" title="Edit">
+          <span class="icon">✏️</span>
+        </button>
+        <button class="btn btn-icon btn-delete" title="Delete">
+          <span class="icon">🗑️</span>
+        </button>
+      </div>
+    </template>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.31/jspdf.plugin.autotable.min.js"></script>
+    <script src="./custom_table/custom-table.js"></script>
+    <script src="data.js"></script>
+  </body>
+</html>
