@@ -162,6 +162,10 @@ MIT License
 
 Copyright (c) 2024 Ainamani Joackim
 
+## Git Repository
+
+https://github.com/AinamaniJ/CustomTableLibrary
+
 ## Contributing
 
 1. Fork the repository
